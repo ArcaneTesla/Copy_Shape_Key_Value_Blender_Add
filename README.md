@@ -1,10 +1,10 @@
 # Blender Addon: Copy Shape Key Value 
 
-DESCRIPTION:
-A small addon to speed up work with the same Shape Key on different models.
+DESCRIPTION:\n
+A small addon to speed up work with the same Shape Key on different models.\n
 
-INFO:
-For Blender 2.8+
-Version 0.9
+INFO:\n
+For Blender 2.8+\n
+Version 0.9\n
 
 by ArcaneTesla
