@@ -6,7 +6,7 @@ bl_info = {
     "location": "View3D > UI > CopyShapeKeyValue",
     "description": "A small addon to speed up work with the same Shape Key on different models.",
     "warning": "This addon does not copy shape keys, only their values! If you find bugs, please report them.",
-    "doc_url": "https://github.com/ArcaneTesla/Copy-Shape-Key-Value-Blender-Add/blob/develop/README.md",
+    "doc_url": "https://github.com/ArcaneTesla/Copy-Shape-Key-Value-Blender-Add/blob/main/README.md",
     "tracker_url": "https://github.com/ArcaneTesla/Copy-Shape-Key-Value-Blender-Add/issues",
     "category": "Object",
 }
