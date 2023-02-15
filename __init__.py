@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Copy Shape Key Value",
     "author": "ArcaneTesla",
-    "version": (0, 9),
+    "version": (1, 0),
     "blender": (3, 4, 0),
     "location": "View3D > UI > CopyShapeKeyValue",
     "description": "A small addon to speed up work with the same Shape Key on different models.",
@@ -32,9 +32,11 @@ class CopyShapeKeyOperatorValue(bpy.types.Operator):
 
         source_shape_keys = source_obj.data.shape_keys
         target_shape_keys = target_obj.data.shape_keys
-        if obj.show_only_shape_key:
-            obj.show_only_shape_key = False
-            self.report({'INFO'}, "Key Lock off ")
+        
+        if source_obj.show_only_shape_key or target_obj.show_only_shape_key:
+            source_obj.show_only_shape_key = False
+            target_obj.show_only_shape_key = False
+            self.report({'INFO'}, "Key Lock off")
 
         if not scene.all_checkbox and scene.selected_source_shape_key == "":
             self.report({'ERROR'}, "You have not selected any shape keys")
@@ -113,7 +115,7 @@ def register():
     bpy.utils.register_class(CopyShapeKeyOperatorValue)
     bpy.types.Scene.selected_source_object = bpy.props.PointerProperty(type=bpy.types.Object)
     bpy.types.Scene.selected_target_object = bpy.props.PointerProperty(type=bpy.types.Object)
-    bpy.types.Scene.extra_value = bpy.props.FloatProperty(name="Extra value", min=0, max=1, default=0.00000)
+    bpy.types.Scene.extra_value = bpy.props.FloatProperty(name="Extra value", min=-1, max=1, default=0.00000)
     bpy.types.Scene.all_checkbox = bpy.props.BoolProperty(name="All_checkbox", default=True)
     bpy.types.Scene.selected_source_shape_key = bpy.props.StringProperty(name="Selected source shape key")
 
